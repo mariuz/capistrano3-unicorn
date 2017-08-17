@@ -46,7 +46,7 @@ namespace :unicorn do
 
   desc "Reload Unicorn (HUP); use this when preload_app: false"
   task :reload do
-    invoke "unicorn:start"
+    invoke! "unicorn:start"
     on roles(fetch(:unicorn_roles)) do
       within current_path do
         info "reloading..."
